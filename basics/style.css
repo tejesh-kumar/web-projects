@@ -1,0 +1,58 @@
+.container{
+    border: 3px solid red;
+    display: flex;
+    /*flex-direction: row row-reverse column column-reverse;
+    flex-wrap: nowrap wrap wrap-reverse;
+    flex-flow: flex-direction flex-wrap;
+    justify-content: flex-start center flex-end space-between space-around;
+    align-items: stretch flex-start flex-end center;
+    align-content: space-around space-between flex-start flex-end center;*/
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: space-between; 
+}
+
+.container1{
+    border: 5px solid red;
+    display: flex;
+}
+
+.box1 {
+    border: 3px solid green;padding: 5px;
+    width: 15%;
+    text-align: center;
+    /*align-self: auto flex-start flex-end center stretch;
+      flex-grow: 0 1 2;
+      flex-shrink: 1 2 3;
+      flex-basis: 250px;
+      flex: flex-grow(0) flex-shrink(1) flex-basis(auto);
+      order: 0 1 2 3*/
+}
+
+nav{
+    background-color: chartreuse;
+}
+nav ul{
+    list-style-type: none;
+   display: flex;
+   /*justify-content: space-around;*/
+   font-size: 1.5rem;
+}
+nav ul li {
+    cursor: pointer;
+    padding: 0.5rem;
+    flex: auto;
+    text-align: center;
+}
+nav ul li a{
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+}
+
+nav ul li :hover {
+    background-color: black;
+    color: white;
+    padding: 0.5rem;
+}
