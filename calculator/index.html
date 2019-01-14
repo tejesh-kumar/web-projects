@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <title>calculator</title>
+</head>
+
+<body id="body">
+    <header id="title">
+        <p id="title-id">calculator</p>
+    </header>
+
+    <section id="section2">
+        <form id="display-body">
+            <textarea name="message" id="textbox" rows="1" style="overflow:hidden"></textarea>
+            <textarea name="message" id="display" style="overflow:hidden"></textarea>
+        </form>
+        <div id="buttons">
+            <button value="c" class="btn" id="clear">C</button>
+            <button value="b" class="btn" id="back">
+                <--</button> <button value="%" class="btn">%
+            </button>
+            <button value="/" class="btn">/</button>
+            <button value="1" class="btn">1</button>
+            <button value="2" class="btn">2</button>
+            <button value="3" class="btn">3</button>
+            <button value="*" class="btn">X</button>
+            <button value="4" class="btn">4</button>
+            <button value="5" class="btn">5</button>
+            <button value="6" class="btn">6</button>
+            <button value="-" class="btn">-</button>
+            <button value="7" class="btn">7</button>
+            <button value="8" class="btn">8</button>
+            <button value="9" class="btn">9</button>
+            <button value="+" class="btn">+</button>
+            <button value="." class="btn">.</button>
+            <button value="0" class="btn">0</button>
+            <button value="=" class="btn" id="equals">=</button>
+        </div>
+
+    </section>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Instructions <br> # Click '=' button in the keypad on screen to get result. 
+        <br># press 'Enter' for result when using keyboard as input. 
+        <br># Note that use only number and basic math operation keys and enter key for result as other keys are not allowed.</p>
+  </div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
