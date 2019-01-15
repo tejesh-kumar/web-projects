@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+} 
+h3{
+    padding: 1.5rem;
+}
+.flex-container {
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.container {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    text-align: center;
+}
+.title {
+    min-height: 7rem;
+    background-color: chartreuse;
+    color: rgb(26, 19, 19);
+    font-size: 2.5rem;
+    text-align: center;
+}
+.menu {
+    background-color: rgb(75, 75, 75);
+    min-height: 1.5rem;
+    padding: 0.5rem;  
+    overflow: hidden; 
+}
+.menu > ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0; margin: 0;
+    /*justify-content: space-around;*/
+}
+.menu > ul >li {
+    flex: auto;
+    text-align: center;
+}
+.menu > ul > li > a {
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+.menu > ul > li > a:hover {
+    background-color: white;
+    color: rgb(75, 75, 75);
+    padding: 0.5rem 0 0.5rem 0;
+    transition: 0.2s linear;
+}
+.main {
+    width: 60%;
+    min-height: 25rem;
+    background-color: rgb(227, 228, 228);
+    padding: 2rem;
+    order: 1;
+}
+.sidebar {
+    width: 25%;
+    min-height: 25rem;
+    background-color: rgb(75, 75, 75);
+    color: white;
+    padding: 2rem;
+    order: 0;
+}
+.ads{
+    background-color: rgb(75, 75, 75);
+    color: white;
+    width: 15%;
+    padding: 2rem;
+    order: 2;
+}
+footer {
+    padding: 2rem;
+    text-align: center;
+    font-size: 2rem;
+    background-color: chartreuse;
+    min-height: 5rem;
+}
+ /*media queries*/
+ @media (max-width: 756px) {
+     .container { 
+        display: initial;
+        margin-bottom: 1rem;
+        margin-left: initial;
+        width: 100%;
+     }
+      .sidebar {
+          width: 100%;
+          order: 1;
+          margin-bottom: 1rem;
+      }
+      .main {
+          width: 100%;
+          order: 0;
+          margin-bottom: 1rem;
+      }
+      .ads {
+        width: 100%;
+        order: 2;
+        margin-bottom: 1rem;
+    }
+    @media (max-width: 600px){
+        .menu > ul {
+            display: block;
+            /*margin: 0.5rem;*/
+        }
+        .menu > ul > li, .menu > ul > li > a:hover {
+            display: block;
+            width: 100%;
+            text-align: center;
+            transition: 0.8s linear;
+        }
+    }
+ }
