@@ -1,30 +1,34 @@
-import { createNote } from './notes'
-import { setFilters } from './filters'
-import { renderNotes } from './views'
+import Hangman from './hangman'
+import getPuzzle from './requests'
 
-renderNotes();
+const puzzleEl = document.querySelector('#puzzle-id');
+const guessesEl = document.querySelector('#guess-id');
+let game1;
 
-document.querySelector('#create-note').addEventListener('click', (e) => {
-    const id = createNote();
-    location.assign(`note.html#${id}`);
+window.addEventListener('keypress', (e) => {
+    const guess = String.fromCharCode(e.charCode);
+    game1.makeGuess(guess);
+    render();
 })
 
-document.querySelector('#search-text').addEventListener('input', (e) => {
-    setFilters({
-        searchText: e.target.value
-    })
-    renderNotes();
-})
+const render = () => {
+    puzzleEl.innerHTML = '';
+    guessesEl.innerHTML = game1.statusMessage;
+    game1.puzzle.split('').forEach(element => {
+        const span = document.createElement('span');
+        span.innerHTML = element;
+        puzzleEl.appendChild(span);
+    });
+}
 
-document.querySelector('#filter-by').addEventListener('change', (e) => {
-    setFilters({
-       sortBy: e.target.value
-    })
-    renderNotes();
-})
+const startGame = async () => {
+    const puzzle = await getPuzzle(1);
+    game1 = new Hangman(puzzle, 10);
+    render();
+}
 
-window.addEventListener('storage', (e) => {
-    if (e.key === 'notes') {
-        renderNotes();
-    }
-})
+document.querySelector('#reset-id').addEventListener('click', startGame);
+
+startGame();
+
+export { game1 as default }
